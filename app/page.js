@@ -17,7 +17,7 @@ export default function Home() {
     </div>
     <div className="bg-white h-1 opacity-10"></div>
     <div className="text-white text-center container py-16">
-      <h1 className="text-2xl font-bold">Your friends can buy you a chai</h1>
+      <h2 className="text-3xl font-bold">Your Friends can buy you a chai</h2>
       <div className="flex my-8 gap-5 items-center justify-around">
       <div className="item flex flex-col justify-center items-center">
           <img className="w-20 bg-white rounded-full" src="./hamster.png" alt="" />
@@ -38,9 +38,9 @@ export default function Home() {
     </div>
     <div className="bg-white h-1 opacity-10 "></div>
     <div className="text-white text-center container py-16">
-      <h1 className="text-2xl font-bold mb-20">Know more about us</h1>
+      <h2 className="text-3xl font-bold mb-20">Know more about us</h2>
       <div className="item flex flex-col justify-center items-center">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/4hILUXdGRZI?si=AC7-wmU5KNMUwdZ0&amp;start=18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/4hILUXdGRZI?si=AC7-wmU5KNMUwdZ0&amp;start=18" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
       </div>
     </div>
     
