@@ -16,23 +16,34 @@ export default function Home() {
       </div>
     </div>
     <div className="bg-white h-1 opacity-10"></div>
-    <div className="text-white font-bold text-center container">
-      <h1 className="text-2xl">Your friends can buy you a chai</h1>
-      <div className="flex my-8 gap-5 justify-around">
-        <div className="item">
-          <img className="w-25 bg-white rounded-full" src="./hamster.png" alt="" />
-          <p className="text-center font-bold">fund yourself</p>
+    <div className="text-white text-center container py-16">
+      <h1 className="text-2xl font-bold">Your friends can buy you a chai</h1>
+      <div className="flex my-8 gap-5 items-center justify-around">
+      <div className="item flex flex-col justify-center items-center">
+          <img className="w-20 bg-white rounded-full" src="./hamster.png" alt="" />
+          <p className="text-center py-2 font-bold">Your fans wants to help</p>
+          <p className="text-center">Your fans are available to help you</p>
         </div>
-        <div className="item">
-          <img className="w-25 bg-white rounded-full" src="./hamster.png" alt="" />
-          <p className="text-center font-bold">fund yourself</p>
+        <div className="item flex flex-col justify-center items-center">
+          <img className="w-20 bg-white rounded-full" src="./coin.gif" alt="" />
+          <p className="text-center py-2 font-bold">Your fans wants to help</p>
+          <p className="text-center">Your fans are available to help you</p>
         </div>
-        <div className="item">
-          <img className="w-25 bg-white rounded-full" src="./hamster.png" alt="" />
-          <p className="text-center font-bold">fund yourself</p>
+        <div className="item flex flex-col justify-center items-center">
+          <img className="w-20 bg-white rounded-full" src="./people.gif" alt="" />
+          <p className="text-center py-2 font-bold">Your fans wants to help</p>
+          <p className="text-center">Your fans are available to help you</p>
         </div>
       </div>
     </div>
+    <div className="bg-white h-1 opacity-10 "></div>
+    <div className="text-white text-center container py-16">
+      <h1 className="text-2xl font-bold mb-20">Know more about us</h1>
+      <div className="item flex flex-col justify-center items-center">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/4hILUXdGRZI?si=AC7-wmU5KNMUwdZ0&amp;start=18" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    
     </>
   );
 }
