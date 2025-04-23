@@ -18,23 +18,35 @@ const page = ({params}) => {
       </div>
       <div className='flex w-[80%] gap-3 m-2 py-8'>
     <div className='Supporters w-1/2 bg-slate-900 p-5 text-white rounded-lg'>
-    <h2 className='text-xl font-bold mb-2'>Supporters</h2>
-      <ul>
-        <li>Ayush Donated $34 with the message ""</li>
-        <li>Ayush Donated $34 with the message ""</li>
-        <li>Ayush Donated $34 with the message ""</li>
-        <li>Ayush Donated $34 with the message ""</li>
-        <li>Ayush Donated $34 with the message ""</li>
-        <li>Ayush Donated $34 with the message ""</li>
-        <li>Ayush Donated $34 with the message ""</li>
-        <li>Ayush Donated $34 with the message ""</li>
+    <h2 className='text-xl font-bold'>Supporters</h2>
+      <ul className='mt-4'>
+        <li className='flex my-2 gap-2 items-center'>
+          <img width = {30} height={30} src="/user.gif" alt="" />
+          Ayush Donated <span className='font-bold'>$34</span>with the message ""
+        </li>
+        <li className='flex my-2 gap-2 items-center'>
+          <img width = {30} height={30} src="/user.gif" alt="" />
+          Ayush Donated <span className='font-bold'>$34</span> with the message ""
+        </li>
+        <li className='flex my-2 gap-2 items-center'>
+          <img width = {30} height={30} src="/user.gif" alt="" />
+          Ayush Donated <span className='font-bold'>$34</span> with the message ""
+        </li>
+        <li className='flex my-2 gap-2 items-center'>
+          <img width = {30} height={30} src="/user.gif" alt="" />
+          Ayush Donated <span className='font-bold'>$34</span> with the message ""
+        </li>
+        
+        
       </ul>
     </div>
     <div className='makePayment w-1/2 text-white p-5 bg-slate-900 rounded-lg'>
       <h2 className='text-xl font-bold mb-2'> Make a Payment</h2>
-      <div className='flex gap-2 mt-8'>
-        <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter a amount'/>
-        <button className='cursor-pointer p-3 rounded-lg bg-slate-800'>Pay</button>
+      <div className='flex gap-2 mt-8 flex-col justify-center'>
+        <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter Name'/>
+        <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter Message'/>
+        <input type="text" className='w-full p-3 rounded-lg bg-slate-800' placeholder='Enter the Amount'/>
+        <button type="button" className="w-full text-white bg-gradient-to-br cursor-pointer from-pink-600 to-orange-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-100 dark:focus:ring-pink-900 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Pay</button>
       </div>
       <div className='mt-4 flex gap-5'>
       <button className='cursor-pointer p-3 rounded-lg bg-slate-800'>Pay $20</button>
