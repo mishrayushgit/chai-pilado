@@ -1,6 +1,7 @@
 import React from 'react'
 
-const page = ({params}) => {
+export default async ({params}) => {
+  const p = {params}
   return (<>
     <div className='cover object-cover w-full relative'>
     <img src="/banner-hamister.gif" className='w-full h-[350px]'/>
@@ -9,7 +10,7 @@ const page = ({params}) => {
     </div>
     </div>
     <div className='flex items-center justify-center mt-14 flex-col'>
-      <div className='font-bold'>@{params.username}</div>
+      <div className='font-bold'>@{p.username}</div>
       <div className='text-slate-400'>
         Likes chai, but a bit sweet
       </div>
@@ -60,4 +61,3 @@ const page = ({params}) => {
   )
 }
 
-export default page
