@@ -5,15 +5,16 @@ import NextAuth from 'next-auth'
 // import EmailProvider from 'next-auth/providers/email'
 import GitHubProvider from 'next-auth/providers/github'
 import mongoose from 'mongoose'
-import user from '@/models/user'
+import User from '@/models/User'
 import Payment from '@/models/Payment'
-
+import connectDB from '@/db/connectDb'
 export const authoptions = NextAuth({
   providers: [
     // OAuth authentication providers...
     GitHubProvider({
       clientId: process.env.GITHUB_ID,
-      clientSecret: process.env.GITHUB_SECRET
+      clientSecret: process.env.GITHUB_SECRET,
+      authorization: { params: { scope: "read:user user:email" } }
     }),
   //   AppleProvider({
   //     clientId: process.env.APPLE_ID,
@@ -36,19 +37,25 @@ export const authoptions = NextAuth({
   callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
     
-      if (account.provider =="github") {
-        //connect to database
-        const client = await mongoose.connect("mongodb://localhost:27017/chai")
-        const currentUser = user.findOne({email:email})
+      if (account.provider ==="github") {
+        await connectDB()
+        const currentUser = await User.findOne({email:profile.email})
         if(!currentUser){
-          const newUser = new user({
+          const newUser = new User({
             email:profile.email,
-            username: email.split("@")[0],
+            username: profile.email.split("@")[0],
           })
         await newUser.save()
+        user.name = newUser.username;
         }
+        return true
       }
-    }
+    },
+    async session({ session, user, token }) {
+      const dbUser = await User.findOne({email:session.user.email})
+      session.user.name = dbUser.username;
+      return session;
+    },
   }
 })
 
