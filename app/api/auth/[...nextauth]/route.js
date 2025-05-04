@@ -7,7 +7,7 @@ import GitHubProvider from 'next-auth/providers/github'
 import mongoose from 'mongoose'
 import User from '@/models/User'
 import Payment from '@/models/Payment'
-import connectDB from '@/db/connectDb'
+import connectDB from '@/db/connectDB'
 export const authoptions = NextAuth({
   providers: [
     // OAuth authentication providers...
