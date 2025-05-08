@@ -1,32 +1,31 @@
 "use client"
 import React, { useState } from 'react'
 import Script from 'next/script'
-import Razorpay from 'razorpay'
 import { initiate } from '@/actions/useractions'
 import { useSession } from 'next-auth/react'
 const PaymentPage = ({username}) => {
-    const { data: session } = useSession()
+    // const { data: session } = useSession()
     const [paymentform, setpaymentform] = useState({})
     const handleChange = (e) => { 
       setpaymentform({
       ...paymentform,
-      [e.target.name] : [e.target.value]
+      [e.target.name] : e.target.value
       })
       console.log(paymentform)
      }
     const pay = async (amount) => { 
         //get the order id
-        let a = await initiate(amount, session?.user.name,paymentform)
+        let a = await initiate(amount, username,paymentform)
         let orderID = a.id
         var options = {
-            "key": process.env.KEY_ID, // Enter the Key ID generated from the Dashboard
+            "key": process.env.NEXT_PUBLIC_KEY_ID, // Enter the Key ID generated from the Dashboard
             "amount": amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             "currency": "INR",
             "name": "Dolly Bhai", //your business name
             "description": "Test Transaction",
             "image": "https://example.com/your_logo",
             "order_id": orderID, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
-            "callback_url": `${process.env.URL}}/api/razorpay`,
+            "callback_url": `${process.env.NEXT_PUBLIC_URL}/api/razorpay`,
             "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information especially their phone number
                 "name": "Gaurav Kumar", //your customer's name
                 "email": "gaurav.kumar@example.com",
@@ -39,7 +38,7 @@ const PaymentPage = ({username}) => {
                 "color": "#3399cc"
             }
         };
-            var rzp1 = new Razorpay(options);
+            var rzp1 = new window.Razorpay(options);
             rzp1.open();
      }
   return (
